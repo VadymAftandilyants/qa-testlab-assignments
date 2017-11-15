@@ -13,26 +13,6 @@ public class CheckMainMenuTest extends BaseScript{
 //    public static void main(String[] args) throws InterruptedException {
 //        TODO Script to check Main Menu items
 
-
-//
-//        List<WebElement> refers2 = driver.findElements(By.className("maintab"));
-//        System.out.println(refers2.size());
-//
-//        for (WebElement refer: refers2) {
-//            WebElement cl = refer.findElement(By.tagName("span"));
-//            System.out.println(refer.getText());
-////            System.out.println(driver.getTitle());
-////            driver.navigate().refresh();
-////            refer.click();
-////            Thread.sleep(3000);
-////            System.out.println(driver.getTitle());
-////            refer.click();
-////            Thread.sleep(3000);
-////
-//        }
-
-
-
     public void menuClick() throws Exception {
         WebDriver driver =  getDriver();
 
