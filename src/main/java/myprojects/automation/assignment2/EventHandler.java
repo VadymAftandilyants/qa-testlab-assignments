@@ -39,12 +39,14 @@ public class EventHandler implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateRefresh(WebDriver webDriver) {
+        System.out.println("Page title before reload: " + webDriver.getTitle());
         System.out.println("Page: " + webDriver.getCurrentUrl() + " to be reloaded");
 
     }
 
     @Override
     public void afterNavigateRefresh(WebDriver webDriver) {
+        System.out.println("Page title after reload: " + webDriver.getTitle());
         System.out.println("Page reload successful");
 
     }

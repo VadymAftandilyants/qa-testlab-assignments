@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class LoginPage {
+
     private EventFiringWebDriver driver;
 
     private By email = By.id("email");
@@ -15,6 +16,7 @@ public class LoginPage {
 
 
         // TODO Script to execute login and logout steps
+
     public LoginPage(EventFiringWebDriver driver) {
         this.driver = driver;
     }
@@ -24,12 +26,12 @@ public class LoginPage {
     }
 
     public void fillEmailInput() {
-//        driver.findElement(email).clear();
+        driver.findElement(email).sendKeys("");
         driver.findElement(email).sendKeys(emailText);
     }
 
     public void fillPassword() {
-//        driver.findElement(pass).clear();
+        driver.findElement(pass).sendKeys("");
         driver.findElement(pass).sendKeys(passText);
     }
 

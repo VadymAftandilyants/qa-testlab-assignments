@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
 import java.io.File;
 
 /**
@@ -24,7 +23,7 @@ public abstract class BaseScript {
             case "firefox":
                 System.setProperty(
                         "webdriver.gecko.driver",
-                        new File(BaseScript.class.getResource("/geckodriver.exe").getFile()).getPath());
+                        new File(BaseScript.class.getResource("/geckodriver").getFile()).getPath());
                 return new FirefoxDriver();
 
             case "chrome":
