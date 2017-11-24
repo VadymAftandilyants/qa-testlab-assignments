@@ -3,9 +3,11 @@ package myprojects.automation.assignment2;
 import myprojects.automation.assignment2.utils.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Base script functionality, can be used for all Selenium scripts.
@@ -29,14 +31,16 @@ public abstract class BaseScript {
             case "chrome":
             default:
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/src/main/resources/chromedriver");
-             return new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("disable-infobars");
+             return new ChromeDriver(options);
         }
     }
 
     public static EventFiringWebDriver getConfiguredDriver() {
         // TODO return  WebDriver instance
         WebDriver driver = getDriver();
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);   // ожидает 5 сек, после повторяет попытку, настраивается один раз
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);   // ожидает 5 сек, после повторяет попытку, настраивается один раз
         EventFiringWebDriver webDriver = new EventFiringWebDriver(driver);
         webDriver.register(new EventHandler());
         return webDriver;
